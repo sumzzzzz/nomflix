@@ -16,6 +16,7 @@ const Title = styled.span`
 
 const Grid = styled.div`
   margin-top: 10px;
+  diaplay: grid;
 `;
 
 const Section = ({ title, children }) => (
