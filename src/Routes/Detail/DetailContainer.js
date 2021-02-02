@@ -49,7 +49,6 @@ export default class extends React.Component {
       } else if (isShow) {
         ({ data: result } = await tvApi.showDetail(parsedId));
       }
-      console.log(result);
     } catch (err) {
       console.log(err);
       this.setState({ error: "Can't find anything" });
