@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "Components/Section";
 import Loader from "Components/Loader";
+import Message from "Components/Message";
 
 const Container = styled.div`
   padding: 0px 10px;
@@ -35,6 +36,7 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, loading, error }) =>
           ))}
         </Section>
       )}
+      {error && <Message text={error} color={"#ff3333"} />}
     </Container>
   );
 
@@ -42,8 +44,8 @@ HomePresenter.propTypes = {
   nowPlaying: PropTypes.array,
   upcoming: PropTypes.array,
   popular: PropTypes.array,
-  loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default HomePresenter;

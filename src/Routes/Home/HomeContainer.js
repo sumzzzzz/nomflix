@@ -30,8 +30,7 @@ export default class extends React.Component {
         upcoming,
         popular,
       });
-    } catch (e) {
-      console.log(e);
+    } catch {
       this.setState({
         error: "Can't find movies information.",
       });
@@ -44,7 +43,6 @@ export default class extends React.Component {
 
   render() {
     const { nowPlaying, upcoming, popular, error, loading } = this.state;
-
     return (
       <HomePresenter
         nowPlaying={nowPlaying}

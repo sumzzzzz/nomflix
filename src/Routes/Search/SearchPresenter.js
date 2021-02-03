@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "Components/Loader";
 import Section from "Components/Section";
+import Message from "Components/Message";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -57,6 +58,13 @@ const SearchPresenter = ({
         )}
       </>
     )}
+    {error && <Message text={error} color={"#ff3333"} />}
+    {tvResults &&
+      movieResults &&
+      tvResults.length === 0 &&
+      movieResults.length === 0 && (
+        <Message text={`Nothing Found for: ${searchTerm}`} color="#b3b3b3" />
+      )}
   </Container>
 );
 
